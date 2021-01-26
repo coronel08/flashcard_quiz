@@ -1,10 +1,9 @@
 # flashcard_quiz
 A flashcard quiz application that used DJango for the backend and API. Also will need a Database. Will use React frontend.
 
-Use this to setup Django Quiz[medium](https://medium.com/swlh/overview-building-a-full-stack-quiz-app-with-django-and-react-57fd07449e2f) and [github source](https://github.com/izennn/udemy-quiz-izen)
+Use this to setup Django Quiz [medium](https://medium.com/swlh/overview-building-a-full-stack-quiz-app-with-django-and-react-57fd07449e2f) and [github source](https://github.com/izennn/udemy-quiz-izen)
 
 ## Table of Contents
-* [](#)
 * [Resources](#resources)
 * [Todo](#todo)
 
@@ -23,8 +22,16 @@ Django [quizbiz](https://github.com/jayndu/QuizzBizz) library Medium tutorial [h
 * [x] Python setup
     * [x] Install django
         * Django-admin startproject {{project-name}} .
-    * [ ] Setup Quiz Logic and Database
-    * [ ] Create rest api serializer
+        * [x] python manage.py createsuperuser
+        * [x] python manage.py makemigrations
+        * [x] python manage.py migrate
+    * [x] Setup Quiz Logic 
+        * [x] Setup models / logic for questions
+        * [x] admin.py setup admin logic for models
+        * [x] Serialize data
+        * [x] setup views using rest-framework library
+        * [ ] Move to Postgres database 
+    * [x] Test rest api
 * [ ] React setup
     * [ ] Read API
     * [ ] Setup React frontend
