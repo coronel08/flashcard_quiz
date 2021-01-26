@@ -15,7 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from rest_framework import routers
+from quizzes import views
+
+
+router = routers.SimpleRouter()
+router.register(r'quizzes', views.QuizViewSet)
+router.register(r'questions', views.QuestionViewSet)
+router.register(r'answers', views.AnswerViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^api/v2/', include((router.urls, 'quizzes'), namespace='apiv2'))
 ]
+
+
