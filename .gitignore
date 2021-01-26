@@ -132,3 +132,5 @@ dmypy.json
 .frontend/node_modules/
 frontend/node_modules/
 frontend/node_modules/.staging/@babel/compat-data-4162692a/corejs2-built-ins.js
+
+.vscode/

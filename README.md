@@ -42,3 +42,5 @@ Django [quizbiz](https://github.com/jayndu/QuizzBizz) library Medium tutorial [h
     * [ ] Setup React frontend
     * [ ] Setup flashcards 
 * [ ] Dockerize database and django
+* [ ] Add to react notes
+ * [ ] Using useEffect hook instead of componentDidMount [Stack Overflow](https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component) useEffect with async() [WebDev blog](https://thewebdev.info/2020/05/05/react-hooks-equivalent-of-componentdidmount/)
