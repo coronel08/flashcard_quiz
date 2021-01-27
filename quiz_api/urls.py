@@ -26,6 +26,9 @@ router.register(r'questions', views.QuestionViewSet)
 router.register(r'answers', views.AnswerViewSet)
 
 
+# Had the below for routing quizzes.url as home page. 
+# path('', include('quizzes.urls')),
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api/v2/', include((router.urls, 'quizzes'), namespace='apiv2'))

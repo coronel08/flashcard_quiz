@@ -7,11 +7,17 @@ A flashcard quiz application that used DJango for the backend and API. Also will
 * [Todo](#todo)
 
 
+### Notes
+Used Cors-headers in django to allow react on localhost:3000 to pull api. 
+
+
 ### Resources
 Used this to setup Django Quiz [medium](https://medium.com/swlh/overview-building-a-full-stack-quiz-app-with-django-and-react-57fd07449e2f) and [github source](https://github.com/izennn/udemy-quiz-izen)
 
 [Django rest framework blog](https://wsvincent.com/django-rest-framework-react-tutorial/) 
 
+
+Django polls api tutorial quick[Learn Django blog](https://learndjango.com/tutorials/django-polls-tutorial-api) also [landing page](https://learndjango.com/tutorials/) for django tutorials
 
 [Full stack testdriven](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/#postgres) Docker, Postgres, Gunicorn, Nginx, Static Files
 
@@ -28,7 +34,7 @@ Django [quizbiz](https://github.com/jayndu/QuizzBizz) library Medium tutorial [h
         * [x] python manage.py createsuperuser
         * [x] python manage.py makemigrations
         * [x] python manage.py migrate
-        * [ ] Setup cors(cross origin resource sharing) middleware
+        * [x] Setup cors(cross origin resource sharing) middleware. <b>Would'nt link to front end without this</b>
     * [x] Setup Quiz Logic 
         * [x] Setup models / logic for questions
         * [x] admin.py setup admin logic for models
@@ -38,9 +44,19 @@ Django [quizbiz](https://github.com/jayndu/QuizzBizz) library Medium tutorial [h
     * [x] Test rest api
 * [ ] React setup
     * [x] npx create react-app frontend
-    * [ ] Read API
+    * [x] Read API
     * [ ] Setup React frontend
     * [ ] Setup flashcards 
+    * [ ] Convert from class to functions. 
+* [ ] Add tokens and authorization and other things to api.
 * [ ] Dockerize database and django
 * [ ] Add to react notes
  * [ ] Using useEffect hook instead of componentDidMount [Stack Overflow](https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component) useEffect with async() [WebDev blog](https://thewebdev.info/2020/05/05/react-hooks-equivalent-of-componentdidmount/)
+* [ ] Add to Django Notes
+    * [ ] Django views.py using ModelViewSet with main urls.py[stackoverflow](https://stackoverflow.com/questions/18194603/django-rest-custom-url-in-a-modelviewset)
+* [ ] Can try deploying into [learn Django deployment options](https://learndjango.com/tutorials/django-hosting-deployment-options) 
+    * Heroku
+    * PythonAnywhere
+    * Digital Ocean VPS
+    * Linode 
+    * Cloud but probably not (lightsail vs Elastic Beanstalk)
