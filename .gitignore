@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# node
+.frontend/node_modules/
+frontend/node_modules/
+frontend/node_modules/.staging/@babel/compat-data-4162692a/corejs2-built-ins.js

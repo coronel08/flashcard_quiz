@@ -37,6 +37,7 @@ Django [quizbiz](https://github.com/jayndu/QuizzBizz) library Medium tutorial [h
         * [ ] Move to Postgres database 
     * [x] Test rest api
 * [ ] React setup
+    * [x] npx create react-app frontend
     * [ ] Read API
     * [ ] Setup React frontend
     * [ ] Setup flashcards 
