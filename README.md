@@ -67,8 +67,6 @@ Gave up on this one but the backend is very detailed [Medium Django and React](h
 
 ---
 ## Todo
-* [ ] Double check API and figure out how to get prompts/questions
-* [ ] Fix api, not showing question/prompt
 * [x] Python setup
     * [x] Install django
         * Django-admin startproject {{project-name}} .
@@ -89,7 +87,10 @@ Gave up on this one but the backend is very detailed [Medium Django and React](h
     * [ ] Setup React frontend
     * [ ] Setup flashcards 
     * [ ] Convert from class to functions. 
+* [x] Double check API and figure out how to get prompts/questions. Serializers.py had a typo in questions. 
+* [x] Fix api, not showing question/prompt
 * [ ] Add tokens and authorization and other things to api.
+    * [ ] sessions and user score tracking 
 * [ ] Dockerize database and django
 
 
