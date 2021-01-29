@@ -3,13 +3,35 @@ A flashcard quiz application that used DJango for the backend and API. Also will
 
 
 ## Table of Contents
+* [Notes](#notes)
 * [Resources](#resources)
 * [Todo](#todo)
 
 
 ---
 ## Notes
-Used Cors-headers in django to allow react on localhost:3000 to pull api. 
+Used Cors-headers in django to allow react on localhost:3000 to pull api. Also made sure to add pagination in Rest Framework to fix questions api.
+
+
+**API Endpoints**
+* Quizzes Overview 
+    * quiz-list
+        * http://localhost:8000/api/v2/quizzes/
+    * quiz-detail
+        * http://localhost:8000/api/v2/quizzes/1/
+    * quiz-all-questions
+        * http://localhost:8000/api/v2/quizzes/1/all_questions
+    * quiz-questions
+        * http://localhost:8000/api/v2/quizzes/1/questions
+* Question Overviews
+    * question-list
+        * http://localhost:8000/api/v2/questions/
+    * question-detail
+        * http://localhost:8000/api/v2/questions/1/answers/
+* Answers 
+    * answer-list
+        * http://localhost:8000/api/v2/answers/
+
 
 
 ---
@@ -46,6 +68,7 @@ Gave up on this one but the backend is very detailed [Medium Django and React](h
 ---
 ## Todo
 * [ ] Double check API and figure out how to get prompts/questions
+* [ ] Fix api, not showing question/prompt
 * [x] Python setup
     * [x] Install django
         * Django-admin startproject {{project-name}} .
@@ -70,10 +93,9 @@ Gave up on this one but the backend is very detailed [Medium Django and React](h
 * [ ] Dockerize database and django
 
 
+---
 * [ ] Add to react notes
     * [ ] Using useEffect hook instead of componentDidMount [Stack Overflow](https://stackoverflow.com/questions/53945763/componentdidmount-equivalent-on-a-react-function-hooks-component) useEffect with async() [WebDev blog](https://thewebdev.info/2020/05/05/react-hooks-equivalent-of-componentdidmount/)
-* [x] Add to Django Notes
-    * [x] Django views using ModelViewSet with main urls [stackoverflow](https://stackoverflow.com/questions/18194603/django-rest-custom-url-in-a-modelviewset)
 * [ ] Can try deploying into [learn Django deployment options](https://learndjango.com/tutorials/django-hosting-deployment-options) 
     * Heroku
     * PythonAnywhere
