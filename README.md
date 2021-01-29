@@ -14,6 +14,9 @@ Used Cors-headers in django to allow react on localhost:3000 to pull api.
 
 ---
 ## Resources
+**Used this for frontend and api [Web Dev Simplified YT](https://www.youtube.com/watch?v=hEtZ040fsD8&t=2098s)**
+
+
 **Used this tutorial for Backend**
 Used this to setup Django Quiz [medium](https://medium.com/swlh/overview-building-a-full-stack-quiz-app-with-django-and-react-57fd07449e2f) and [github source](https://github.com/izennn/udemy-quiz-izen)
 
@@ -42,6 +45,7 @@ Gave up on this one but the backend is very detailed [Medium Django and React](h
 
 ---
 ## Todo
+* [ ] Double check API and figure out how to get prompts/questions
 * [x] Python setup
     * [x] Install django
         * Django-admin startproject {{project-name}} .
