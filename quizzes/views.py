@@ -18,7 +18,10 @@ class QuizViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['get'])
     def questions(self, request, pk=None):
-        ''' An ad-hoc action with @action decorator to return a list of questions'''
+        ''' 
+        An ad-hoc action with @action decorator to return a list of questions
+        DRF simplerouter automatically registers url
+        '''
         questions = models.Question.objects.filter(quiz_id=pk)
 
         self.pagination_class.page_size=1
@@ -35,7 +38,10 @@ class QuizViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['get'])
     def all_questions(self, request, pk=None):
-        ''' an ad-hoc action with action decorator that returns all questions'''
+        ''' 
+        An ad-hoc action with action decorator that returns all questions
+        DRF simplerouter automatically registers url
+        '''
         questions = models.Question.objects.filter(quiz_id=pk)
         serializer = serializers.QuestionSerializer(
             questions,

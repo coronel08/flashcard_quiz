@@ -41,7 +41,7 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(
         Question, 
-        related_name = ("answers"),
+        related_name = "answers",
         on_delete=models.DO_NOTHING
     )
     text = models.CharField( max_length=255)

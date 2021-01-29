@@ -4,18 +4,18 @@ from . import models
 
 
 class QuizSerializer(serializers.ModelSerializer):
-    questions = serializers.HyperlinkedRelatedField(
-        many=True,
-        read_only=True,
-        view_name='apiv2:question-detail'
-    )
-
     def get_fullname(self, obj):
         return obj.author.first_name + ' ' + obj.author.last_name
 
     def get_question_count(self, obj):
         return obj.question_count  # we defined this method in models.py
 
+
+    questions = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='apiv2:question-detail'
+    )
     author_fullname = serializers.SerializerMethodField("get_fullname")
     question_count = serializers.SerializerMethodField("get_question_count")
 
