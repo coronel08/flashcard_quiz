@@ -11,16 +11,17 @@ http://localhost:8000/api/v2/quizzes/1/all_questions/ all questions by quiz
 
 function App() {
 
-    const [quizzes, setQuizzes] = useState({data:[]})
+    const [quizzes, setQuizzes] = useState([])
 
     useEffect(() => {
         axios
         .get('http://127.0.0.1:8000/api/v2/questions/')
         .then(res => {
-            setQuizzes(res.data.map((questionItem, index) => {
+            setQuizzes(res.data.results.map((questionItem, index) => {
                 return {
-                // Fill in once I figure out how to sort API
-                }
+                    id: `${index}-${Date.now()}`,
+                    quiz: questionItem.quiz_title,
+                    question: questionItem.prompt                }
             }))
             // https://stackoverflow.com/questions/61909924/rendering-json-child-list-from-object-list-in-reactjs
             console.log(res.data)
@@ -31,6 +32,9 @@ function App() {
         <div className="App">
             <h1>Header</h1>
             <div className="Quiz">
+                {quizzes.map(quiz => {
+                    return quiz.question
+                })}
             </div>
         </div>
     )
