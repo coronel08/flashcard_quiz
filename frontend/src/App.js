@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Flashcard from './Flashcard'
 import axios from 'axios'
 
 /* 
@@ -16,12 +17,18 @@ function App() {
     useEffect(() => {
         axios
         .get('http://127.0.0.1:8000/api/v2/questions/')
+        // .get('http://localhost:8000/api/v2/quizzes/')
         .then(res => {
             setQuizzes(res.data.results.map((questionItem, index) => {
+                const answers = questionItem.answers.map(answer => {
+                    return <div className="options">{answer.text}</div>
+                })
                 return {
                     id: `${index}-${Date.now()}`,
                     quiz: questionItem.quiz_title,
-                    question: questionItem.prompt                }
+                    question: questionItem.prompt,
+                    answers: answers
+                }
             }))
             // https://stackoverflow.com/questions/61909924/rendering-json-child-list-from-object-list-in-reactjs
             console.log(res.data)
@@ -33,7 +40,7 @@ function App() {
             <h1>Header</h1>
             <div className="Quiz">
                 {quizzes.map(quiz => {
-                    return quiz.question
+                    return < Flashcard quiz={quiz} key={quiz.id} />
                 })}
             </div>
         </div>
