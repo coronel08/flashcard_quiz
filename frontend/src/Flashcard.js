@@ -8,11 +8,9 @@ export default function Flashcard({ quiz }) {
                 className={`card ${flip ? 'flip' : ''}`} 
                 onClick={() => setFlip(!flip)}
             >
-                {/* {quiz.id} */}
                 <h3>{quiz.prompt}</h3>
-                {/* {flip ? quiz.quiz : quiz.prompt} */}
                 {quiz.options.map(option => {
-                    return <div className="option">{option.text}</div>
+                    return <div className="option">{flip ? option.id : option.text}</div>
                 })}
             </div>
             <div className="back">

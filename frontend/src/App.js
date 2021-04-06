@@ -13,7 +13,6 @@ http://localhost:8000/api/v2/quizzes/1/all_questions/ all questions by quiz
 function App() {
 
     const [quizzes, setQuizzes] = useState([])
-
     // useEffect(() => {
     //     axios
     //     .get('http://127.0.0.1:8000/api/v2/questions/')
@@ -52,6 +51,7 @@ function App() {
             console.log(res.data)
         })
     }, [])
+
 
     return (
         <div className="App">
