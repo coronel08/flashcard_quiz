@@ -1,11 +1,15 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 export default function Flashcard({ quiz }) {
     const [flip, setFlip] = useState(false)
     return (
-        <div key={quiz}>{quiz.answers.map(options => {
-            return <p key={options.id}>{options.text}</p>
-        })}</div>
+        <div className={`card ${flip ? 'flip' : ''}`} 
+            onClick={() => setFlip(!flip)}
+        >
+            <div key={quiz}>{quiz.answers.map(options => {
+                return <p key={options.id}>{options.id} {flip ? options.correct.toString() : options.text}</p>
+            })}</div>
+        </div>
         // <div className="card-grid">
         //     <div 
         //         className={`card ${flip ? 'flip' : ''}`} 
