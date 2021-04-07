@@ -11,8 +11,8 @@ http://localhost:8000/api/v2/quizzes/1/all_questions/ all questions by quiz
 */
 
 function App() {
-    const [quizzes, setQuizzes] = useState(data)
-    // const [quizzes, setQuizzes] = useState([])
+    // const [quizzes, setQuizzes] = useState(data)
+    const [quizzes, setQuizzes] = useState([])
     // useEffect(() => {
     //     axios
     //     .get('http://127.0.0.1:8000/api/v2/questions/')
@@ -34,23 +34,29 @@ function App() {
     //     })
     // }, [])
 
-    // useEffect(() => {
-    //     axios
-    //     .get('http://localhost:8000/api/v2/quizzes/1/all_questions/')
-    //     .then(res => {
-    //         setQuizzes(res.data.map((questionItem, index) => {
-    //             const options = [...questionItem.answers]
-    //             return {
-    //                 id: `${index}-${Date.now()}`,
-    //                 quiz: questionItem.quiz_title,
-    //                 prompt: questionItem.prompt,
-    //                 options
-    //             }
-    //         }))
-    //         // https://stackoverflow.com/questions/61909924/rendering-json-child-list-from-object-list-in-reactjs
-    //         console.log(res.data)
-    //     })
-    // }, [])
+    useEffect(() => {
+        axios
+        .get('http://localhost:8000/api/v2/quizzes/1/all_questions/')
+        .then(res => {
+            setQuizzes(res.data.map((questionItem, index) => {
+                const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {
+                    return options.text
+                })
+                const allAnswers = questionItem.answers.map(options => {
+                    return <p key={options.id}> {options.text} </p>
+                })
+                return {
+                    id: `${index}-${Date.now()}`,
+                    quiz: questionItem.quiz_title,
+                    prompt: questionItem.prompt,
+                    allAnswers,
+                    correctAnswer,
+                }
+            }))
+            // https://stackoverflow.com/questions/61909924/rendering-json-child-list-from-object-list-in-reactjs
+            console.log(res.data)
+        })
+    }, [])
     console.log(quizzes)
 
 
@@ -66,7 +72,7 @@ function App() {
                     return (
                         <React.Fragment key={index}>
                             <h4>{quiz.id}. {quiz.prompt}</h4>
-                            < Flashcard quiz={quiz.answers} key={quiz.id}/>
+                            < Flashcard quiz={quiz} key={quiz.id}/>
                         </React.Fragment>
                     )
                 })}
