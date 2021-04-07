@@ -66,7 +66,7 @@ function App() {
                     return (
                         <React.Fragment key={index}>
                             <h4>{quiz.id}. {quiz.prompt}</h4>
-                            < Flashcard quiz={quiz} key={quiz.id}/>
+                            < Flashcard quiz={quiz.answers} key={quiz.id}/>
                         </React.Fragment>
                     )
                 })}
