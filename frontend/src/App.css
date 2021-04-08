@@ -1,38 +1,36 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: pink;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
+  color: aqua;
+  background-color: black;
+  opacity: .4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  color: pink;
+  margin:0 5px 5px 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flashcard-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flashcard {
+  position: relative;
+  border-radius: .1rem;
+  box-shadow: 0 0 5px 2px ;
+  padding: 10px;
+  margin: 5px;
+  background-color: white;
 }
