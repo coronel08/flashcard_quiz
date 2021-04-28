@@ -12,53 +12,53 @@ http://localhost:8000/api/v2/quizzes/1/all_questions/ all questions by quiz
 */
 
 function App() {
-    const [quizzes, setQuizzes] = useState([])
+    // const [quizzes, setQuizzes] = useState([])
 
     // SAMPLE DATA FOR TESTING 
-    // const [quizzes, setQuizzes] = useState(data)
-    // useEffect(() => {
-    //     setQuizzes(quizzes.map((questionItem, index) => {
-    //         const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {
-    //             return options.text
-    //         })
-    //         const allAnswers = questionItem.answers.map(options => {
-    //             return <p key={options.id}> {options.text} </p>
-    //         })
-    //         return {
-    //             id: `${index}-${Date.now()}`,
-    //             quiz: questionItem.quiz_title,
-    //             prompt: questionItem.prompt,
-    //             allAnswers,
-    //             correctAnswer,
-    //         }
-    //     }))
-    // }, [])
-
-
-
+    const [quizzes, setQuizzes] = useState(data)
     useEffect(() => {
-        axios
-            .get('http://localhost:8000/api/v2/quizzes/1/all_questions/')
-            .then(res => {
-                setQuizzes(res.data.map((questionItem, index) => {
-                    const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {
-                        return <p>* {options.text} </p>
-                    })
-                    const allAnswers = questionItem.answers.map(options => {
-                        return <p key={options.id}> - {options.text} </p>
-                    })
-                    return {
-                        id: `${index}-${Date.now()}`,
-                        quiz: questionItem.quiz_title,
-                        prompt: questionItem.prompt,
-                        allAnswers,
-                        correctAnswer,
-                    }
-                }))
-                // https://stackoverflow.com/questions/61909924/rendering-json-child-list-from-object-list-in-reactjs
-                console.log(res.data)
+        setQuizzes(quizzes.map((questionItem, index) => {
+            const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {
+                return options.text
             })
+            const allAnswers = questionItem.answers.map(options => {
+                return <p key={options.id}> - {options.text} </p>
+            })
+            return {
+                id: `${index}-${Date.now()}`,
+                quiz: questionItem.quiz_title,
+                prompt: questionItem.prompt,
+                allAnswers,
+                correctAnswer,
+            }
+        }))
     }, [])
+
+
+
+    // useEffect(() => {
+    //     axios
+    //         .get('http://localhost:8000/api/v2/quizzes/1/all_questions/')
+    //         .then(res => {
+    //             setQuizzes(res.data.map((questionItem, index) => {
+    //                 const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {
+    //                     return <p>* {options.text} </p>
+    //                 })
+    //                 const allAnswers = questionItem.answers.map(options => {
+    //                     return <p key={options.id}> - {options.text} </p>
+    //                 })
+    //                 return {
+    //                     id: `${index}-${Date.now()}`,
+    //                     quiz: questionItem.quiz_title,
+    //                     prompt: questionItem.prompt,
+    //                     allAnswers,
+    //                     correctAnswer,
+    //                 }
+    //             }))
+    //             // https://stackoverflow.com/questions/61909924/rendering-json-child-list-from-object-list-in-reactjs
+    //             console.log(res.data)
+    //         })
+    // }, [])
 
 
 
