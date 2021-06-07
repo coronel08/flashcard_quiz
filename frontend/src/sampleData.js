@@ -80,31 +80,31 @@ module.exports = [
             }
         ]
     },
-    // {
-    //     id:4,
-    //     quiz_title:'Electrical Quiz',
-    //     prompt:'An employer remits State disability taxes withheld from an employees wages to what agency',
-    //     answers: [
-    //         {
-    //             id:1,
-    //             text:'Internal Revenue Service',
-    //             correct:false
-    //         },
-    //         {
-    //             id:2,
-    //             text:'Employment Development department',
-    //             correct:true
-    //         },
-    //         {
-    //             id:3,
-    //             text:'Franchise Tax Board',
-    //             correct:false
-    //         },
-    //         {
-    //             id:4,
-    //             text:'Board of Equalization',
-    //             correct:false
-    //         }
-    //     ]
-    // }
+    {
+        id:4,
+        quiz_title:'Electrical Quiz',
+        prompt:'An employer remits State disability taxes withheld from an employees wages to what agency',
+        answers: [
+            {
+                id:1,
+                text:'Internal Revenue Service',
+                correct:false
+            },
+            {
+                id:2,
+                text:'Employment Development department',
+                correct:true
+            },
+            {
+                id:3,
+                text:'Franchise Tax Board',
+                correct:false
+            },
+            {
+                id:4,
+                text:'Board of Equalization',
+                correct:false
+            }
+        ]
+    }
 ]

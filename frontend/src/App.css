@@ -5,6 +5,12 @@
 
 body {
   background-color: pink;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
@@ -20,18 +26,56 @@ body {
   margin:0 5px 5px 15px;
 }
 
-.flashcard-grid {
+.container {
+  max-width: 100%;
+  margin: 1rem;
+}
+
+.card {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  border-radius: .25rem;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+  background-color: white;
+  height: 250px;
+  width:auto;
+  transform: perspective(1000px) rotateY(var(--rotate-y,0));
+  transform-style: preserve-3d;
+  transition: 150ms;
 }
 
-.flashcard {
-  position: relative;
-  border-radius: .1rem;
-  box-shadow: 0 0 5px 2px ;
-  padding: 10px;
-  margin: 5px;
-  background-color: white;
+.card:hover {
+  box-shadow: 0 0 5px 2px rgba(0,0,0, .9);
+}
+
+.card.flip {
+  --rotate-y: 180deg;
+  color: #555;
+  font-size: 1rem;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  padding:1rem;
+  backface-visibility: hidden;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.flashcard-options {
+  margin-top: .25rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
 }

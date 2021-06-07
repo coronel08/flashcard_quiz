@@ -65,17 +65,15 @@ function App() {
     return (
         <div className="App">
             <h1>Heading</h1>
-            <div className="flashcard-grid">
-                {quizzes.map(function (quiz, index) {
-                    return (
-                        <React.Fragment key={index}>
-                            <div className='flashcard'>
-                                <h4>{quiz.prompt}</h4>
-                                < Flashcard quiz={quiz} key={quiz.id} />
-                            </div>
-                        </React.Fragment>
-                    )
-                })}
+            <div className="container">
+                <div className="card-grid">
+                    {quizzes.map(function (quiz, index) {
+                        return (
+                            < Flashcard flashcard={quiz} key={quiz.id} />
+                        )
+                    })}
+                </div>
+
             </div>
         </div>
     )
