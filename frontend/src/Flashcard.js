@@ -33,7 +33,7 @@ export default function Flashcard({ flashcard }) {
                     </div>
                 </div>
                 <div className="back" ref={backElement}>
-                    {flip ? flashcard.correctAnswer : flashcard.allAnswers}
+                    {flashcard.correctAnswer}
                 </div>
             </div>
         </div>
