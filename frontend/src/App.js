@@ -42,7 +42,7 @@ function App() {
     //         .then(res => {
     //             setQuizzes(res.data.map((questionItem, index) => {
     //                 const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {
-    //                     return <p>* {options.text} </p>
+    //                     return options.text
     //                 })
     //                 const allAnswers = questionItem.answers.map(options => {
     //                     return <p key={options.id}> - {options.text} </p>
