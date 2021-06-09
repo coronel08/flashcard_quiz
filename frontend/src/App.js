@@ -37,31 +37,6 @@ function App() {
     }, [])
 
 
-
-    // useEffect(() => {
-    //     axios
-    //         .get('http://localhost:8000/api/v2/quizzes/1/all_questions/')
-    //         .then(res => {
-    //             setQuizzes(res.data.map((questionItem, index) => {
-    //                 const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {
-    //                     return options.text
-    //                 })
-    //                 const allAnswers = questionItem.answers.map(options => {
-    //                     return <p key={options.id}> - {options.text} </p>
-    //                 })
-    //                 return {
-    //                     id: `${index}-${Date.now()}`,
-    //                     quiz: questionItem.quiz_title,
-    //                     prompt: questionItem.prompt,
-    //                     allAnswers,
-    //                     correctAnswer,
-    //                 }
-    //             }))
-    //             // https://stackoverflow.com/questions/61909924/rendering-json-child-list-from-object-list-in-reactjs
-    //             console.log(res.data)
-    //         })
-    // }, [])
-
     useEffect(() => {
         axios
             .get('http://localhost:8000/api/v2/quizzes/')
