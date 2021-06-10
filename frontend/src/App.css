@@ -102,3 +102,9 @@ select#category{
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: .5rem;
 }
+
+@media only screen and (max-width: 576px) {
+  .card-grid{
+    grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+  }
+}
