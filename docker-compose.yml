@@ -1,0 +1,21 @@
+version: '3.7'
+
+services: 
+  #Django Backend
+  backend:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/backend
+    ports: 
+      - 8000:8000
+  # React Frontend
+  frontend:
+    build: ./frontend/
+    command: npm start
+    volumes:
+      - ./frontend:/frontend
+    ports: 
+      - 3000:3000
+    depends_on: 
+      - backend
