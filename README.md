@@ -10,7 +10,7 @@ A flashcard quiz application that used DJango for the backend and API. Also will
 
 ---
 ## Notes
-Used Cors-headers in django to allow react on localhost:3000 to pull api. Also made sure to add pagination in Rest Framework to fix questions api.
+Used Cors-headers in django to allow react on localhost:3000 to pull api. Also made sure to add pagination in Rest Framework to fix questions api. Can fix later as well as Allowed Hosts in settings.py. Can also change to Postgres database with docker-compose but shouldn't make much of a diff.
 
 
 **API Endpoints**
