@@ -5,6 +5,7 @@ import data from './sampleData'
 import './App.css'
 
 /* 
+port is typically 8000 but used 8001 for reverse proxy
 http://localhost:8000/api/v2/quizzes/       has all quizzes and # of questions
 http://localhost:8000/api/v2/questions/     has all questions quiz title and answers
 http://localhost:8000/api/v2/answers/       has all answers 
@@ -39,7 +40,7 @@ function App() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:8000/api/v2/quizzes/')
+            .get('http://localhost:8001/api/v2/quizzes/')
             .then(res => {
                 setCategory(res.data)
             })
@@ -48,7 +49,7 @@ function App() {
     function handleSubmit(e) {
         e.preventDefault()
         axios
-            .get(`http://localhost:8000/api/v2/quizzes/${categoryElement.current.value}/all_questions/`)
+            .get(`http://localhost:8001/api/v2/quizzes/${categoryElement.current.value}/all_questions/`)
             .then(res => {
                 setQuizzes(res.data.map((questionItem, index) => {
                     const correctAnswer = questionItem.answers.filter(options => options.correct.toString() === 'true').map(options => {

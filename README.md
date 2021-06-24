@@ -5,6 +5,7 @@ A flashcard quiz application that used DJango for the backend and API. Also will
 ## Table of Contents
 * [Notes](#notes)
 * [Resources](#resources)
+    * [Deployment](#deployment)
 * [Todo](#todo)
 
 
@@ -16,21 +17,21 @@ Used Cors-headers in django to allow react on localhost:3000 to pull api. Also m
 **API Endpoints**
 * Quizzes Overview 
     * quiz-list
-        * http://localhost:8000/api/v2/quizzes/
+        * http://localhost:8001/api/v2/quizzes/
     * quiz-detail
-        * http://localhost:8000/api/v2/quizzes/1/
+        * http://localhost:8001/api/v2/quizzes/1/
     * quiz-all-questions
-        * http://localhost:8000/api/v2/quizzes/1/all_questions
+        * http://localhost:8001/api/v2/quizzes/1/all_questions
     * quiz-questions
-        * http://localhost:8000/api/v2/quizzes/1/questions
+        * http://localhost:8001/api/v2/quizzes/1/questions
 * Question Overviews
     * question-list
-        * http://localhost:8000/api/v2/questions/
+        * http://localhost:8001/api/v2/questions/
     * question-detail
-        * http://localhost:8000/api/v2/questions/1/answers/
+        * http://localhost:8001/api/v2/questions/1/answers/
 * Answers 
     * answer-list
-        * http://localhost:8000/api/v2/answers/
+        * http://localhost:8001/api/v2/answers/
 
 
 
@@ -50,7 +51,7 @@ Used this to setup Django Quiz [medium](https://medium.com/swlh/overview-buildin
 Django polls api tutorial quick[Learn Django blog](https://learndjango.com/tutorials/django-polls-tutorial-api) also [landing page](https://learndjango.com/tutorials/) for django tutorials
 
 
-**Deployment**
+### Deployment
 [Full stack testdriven](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/#postgres) Docker, Postgres, Gunicorn, Nginx, Static Files
 
 
@@ -63,6 +64,18 @@ Django [quizbiz](https://github.com/jayndu/QuizzBizz) library Medium tutorial [h
 
 **Tried this one but gave up on it, didnt use for this project**
 Gave up on this one but the backend is very detailed [Medium Django and React](https://medium.com/swlh/how-to-deploy-django-rest-framework-and-react-redux-application-with-docker-fa902a611abf)
+
+
+Can use Docker to deploy backend Django and frontend React. Launches them and uses the Dockerfiles to build the image. Only backend has a volume. <br>
+
+localhost:3000 for React frontend that reads 
+localhost:8001 for Django backend and API (typically port 8000 but used 8001 in docker-compose file.)
+```
+# might need to run docker-compose -d --build to rebuild image.
+docker-compose up -d 
+```
+
+
 
 
 ---

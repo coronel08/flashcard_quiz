@@ -12,7 +12,7 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/v2/quizzes/')
+      const res = await fetch('http://127.0.0.1:8001/api/v2/quizzes/')
       const quizzes = await res.json()
       this.setState({
         quizzes
